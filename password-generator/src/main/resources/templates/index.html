@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Password Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Password Generator</h1>
+    <form method="get" action="/">
+        <label>
+            Length:
+            <input type="number" name="length" min="1" required />
+        </label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="upper" checked> Uppercase</label>
+            <label><input type="checkbox" name="lower" checked> Lowercase</label>
+            <label><input type="checkbox" name="digits" checked> Digits</label>
+            <label><input type="checkbox" name="symbols"> Symbols</label>
+        </div>
+        <button type="submit">Generate</button>
+    </form>
+    <div class="result" th:if="${password != null}">
+        <strong>Your password:</strong>
+        <div th:text="${password}"></div>
+    </div>
+</div>
+</body>
+</html>

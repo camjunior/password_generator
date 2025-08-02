@@ -13,7 +13,7 @@ public class PasswordService {
     private final SecureRandom random = new SecureRandom();
 
     public String generate(int length, boolean upper, boolean lower, boolean digits, boolean symbols) {
-        if (length <= 0) throw new IllegalArgumentException("length must be > 0");
+        if (length < 8) throw new IllegalArgumentException("length must have 8 or more characters");
         // Monta os grupos ativos
         List<String> activeGroups = new ArrayList<>();
         if (upper)  activeGroups.add(CharPool.UPPER);

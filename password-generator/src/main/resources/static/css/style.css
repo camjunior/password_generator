@@ -76,3 +76,28 @@ button:hover {
 .checkbox-group {
     margin-top: 15px;
 }
+.password-error{
+    background-color: #ffecec;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background-color: #e6ffed;
+    color: #22863a;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #c6f6d5;
+}
+
+.alert-error {
+    background-color: #ffecec;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c2c2;
+}
+

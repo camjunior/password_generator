@@ -10,7 +10,21 @@
 <body>
 <div class="container">
     <h1>Password Generator</h1>
-    <form method="get" action="/">
+    <div th:if="${error}" class="password-error">
+        <strong th:text="${error}"></strong>
+    </div>
+    <!-- Sucesso -->
+    <div th:if="${success}" class="alert-success">
+        <strong th:text="${success}"></strong>
+    </div>
+
+    <!-- Erro -->
+    <div th:if="${error}" class="alert-error">
+        <strong th:text="${error}"></strong>
+    </div>
+
+
+    <form method="post" action="/">
         <label>
             Length:
             <input type="number" name="length" min="1" required />
@@ -21,7 +35,12 @@
             <label><input type="checkbox" name="digits" checked> Digits</label>
             <label><input type="checkbox" name="symbols"> Symbols</label>
         </div>
-        <button type="submit">Generate</button>
+        <label>
+            E-mail:
+            <input type="email" name="email" placeholder="Digite seu e-mail"/>
+        </label>
+        <button type="submit" name="action" value="generate">Gerar Senha</button>
+        <button type="submit" name="action" value="send">Gerar e enviar por e-mail</button>
     </form>
     <div class="result" th:if="${password != null}">
         <strong>Your password:</strong>
